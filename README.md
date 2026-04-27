@@ -1,6 +1,6 @@
 # AI Landscape Field Guide
 
-A plain English reference guide to the AI landscape for beginners — creatives, business owners, students, and anyone trying to make sense of it all. No jargon, no fluff. Everything in one place.
+A plain English reference guide to the AI landscape for beginners : creatives, business owners, students, and anyone trying to make sense of it all. No jargon, no fluff. Everything in one place.
 
 **Live site:** [ai-field-guide.pages.dev](https://ai-field-guide.pages.dev)
 
@@ -8,12 +8,12 @@ A plain English reference guide to the AI landscape for beginners — creatives,
 
 ## What it covers
 
-- **Core Concepts** — What an LLM actually is, what a model is, open source vs closed, APIs explained simply
-- **How It Works** — A plain English walkthrough of what happens between pressing Send and getting a response
-- **Start Here** — Goal-based recommendations for beginners (just want to chat, generate images, run privately, etc.)
-- **Terminology Decoder** — 16 terms you will encounter, decoded without the technical noise
-- **Model Reference Table** — 58 AI models across 9 categories, filterable, with access and availability info
-- **The Honest Takeaway** — What actually matters once you cut through all the hype
+- **Core Concepts.** What an LLM actually is, what a model is, open source vs closed, APIs explained simply
+- **How It Works.** A plain English walkthrough of what happens between pressing Send and getting a response
+- **Start Here.** Goal-based recommendations for beginners (just want to chat, generate images, run privately, etc.)
+- **Terminology Decoder.** 16 terms you will encounter, decoded without the technical noise
+- **Model Reference Table.** 58 AI models across 9 categories, filterable, with access and availability info
+- **The Honest Takeaway.** What actually matters once you cut through all the hype
 
 ---
 
@@ -37,7 +37,7 @@ This is a single `index.html` file. Drop it anywhere that serves static files.
 1. Go to Cloudflare Pages dashboard
 2. Create new project, choose Direct Upload
 3. Upload `index.html`
-4. Done — live at `your-project.pages.dev`
+4. Done. Live at `your-project.pages.dev`
 
 **Other options**
 
@@ -51,7 +51,7 @@ This is a single `index.html` file. Drop it anywhere that serves static files.
 
 ## Customising
 
-All content is in the HTML file. The model data lives in a single `MODELS` array in the script section at the bottom — easy to add, remove, or update entries.
+All content is in the HTML file. The model data lives in a single `MODELS` array in the script section at the bottom. Easy to add, remove, or update entries.
 
 ```js
 { 
@@ -71,7 +71,7 @@ All content is in the HTML file. The model data lives in a single `MODELS` array
 
 ## Project
 
-Part of the personal portfolio of [Jeret Christopher](https://jeretchristopher.com) — web designer, musician, and author based in Malaysia.
+Part of the personal portfolio of [Jeret Christopher](https://jeretchristopher.com), web designer, musician, and author based in Malaysia.
 
 - Portfolio: [jeretchristopher.com](https://jeretchristopher.com)
 - Novella: [theheavyshadow.com](https://theheavyshadow.com)
