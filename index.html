@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- Primary Meta -->
+<title>AI Landscape Field Guide 2025-2026</title>
+<meta name="description" content="A plain English guide to AI for beginners. LLMs, models, tools, jargon decoded. Everything in one place for creatives, business owners, students and curious minds.">
+<meta name="author" content="Jeret Christopher">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ai-field-guide.pages.dev/">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp previews) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai-field-guide.pages.dev/">
+<meta property="og:title" content="AI Landscape Field Guide 2025-2026">
+<meta property="og:description" content="A plain English guide to AI for beginners. LLMs, models, tools, jargon decoded. Everything in one place.">
+<meta property="og:image" content="https://ai-field-guide.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="AI Field Guide">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://ai-field-guide.pages.dev/">
+<meta name="twitter:title" content="AI Landscape Field Guide 2025-2026">
+<meta name="twitter:description" content="A plain English guide to AI for beginners. LLMs, models, tools, jargon decoded. Everything in one place.">
+<meta name="twitter:image" content="https://ai-field-guide.pages.dev/og-image.png">
+<meta name="twitter:creator" content="@paul_depuis">
+
+<!-- Theme & App -->
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AI Field Guide">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Apple-inspired design system - expansive, clean, airy */
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --surface: #ffffff;
+  --surface-elevated: rgba(255,255,255,0.8);
+  --border: rgba(0,0,0,0.06);
+  --border-strong: rgba(0,0,0,0.12);
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --accent: #0071e3;
+  --accent-glow: rgba(0,113,227,0.08);
+  --card-shadow: 0 12px 32px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+  --card-shadow-hover: 0 20px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+
+  --c-frontier: #0071e3;
+  --c-open: #34c759;
+  --c-multi: #bf5af2;
+  --c-reason: #5e5ce0;
+  --c-code: #f5a623;
+  --c-image: #ff3b30;
+  --c-audio: #64d2ff;
+  --c-embed: #8e8e93;
+  --c-local: #af52de;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --content-narrow: 880px;
+  --content-wide: 1280px;
+}
+
+.dark {
+  --bg: #000000;
+  --bg-secondary: #141414;
+  --surface: #1c1c1e;
+  --surface-elevated: rgba(28,28,30,0.85);
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.15);
+  --text: #ffffff;
+  --text-secondary: #98989d;
+  --text-tertiary: #6c6c70;
+  --accent: #2997ff;
+  --accent-glow: rgba(41,151,255,0.12);
+  --card-shadow: 0 12px 32px rgba(0,0,0,0.3), 0 0 0 0.5px rgba(255,255,255,0.05);
+  --card-shadow-hover: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.08);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.05; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); letter-spacing: -0.02em; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; font-weight: 590; letter-spacing: -0.01em; }
+
+/* Navigation */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--surface-elevated);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-brand {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+  margin-right: auto;
+}
+.nav-link {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0 0.25rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.nav-link:hover { color: var(--text); border-bottom-color: var(--accent); }
+.nav-link.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
+
+/* Apple-style toggle - clean pill, no icons */
+.theme-toggle {
+  margin-left: auto;
+  width: 52px;
+  height: 32px;
+  background: var(--border-strong);
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+.theme-toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  border-radius: 28px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.dark .theme-toggle {
+  background: #34c759;
+}
+.dark .theme-toggle-knob {
+  transform: translateX(20px);
+}
+
+/* Layout containers */
+.container-narrow {
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.container-wide {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: clamp(5rem, 12vw, 9rem) 2rem clamp(4rem, 8vw, 6rem);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg) 100%);
+  border-bottom: 0.5px solid var(--border);
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-glow);
+  padding: 0.3rem 1.2rem;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+.hero h1 { margin-bottom: 1.2rem; }
+.hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent), #47a1ff); background-clip: text; -webkit-background-clip: text; color: transparent; }
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.5;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+.stat-num {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--text), var(--text-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0.2px;
+  margin-top: 4px;
+}
+
+/* Section styling */
+.section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.section-alt { background: var(--bg-secondary); }
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+.section-tag {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.section-header h2 { margin-bottom: 0.75rem; }
+.section-header p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-header p::-webkit-scrollbar {
+  display: none;
+}
+/* Concept cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+.concept-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 0.5px solid var(--border);
+  transition: all 0.3s ease;
+}
+.concept-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+.card-num {
+  width: 36px; height: 36px;
+  background: var(--accent-glow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.card-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+.concept-card h3 { margin-bottom: 0.75rem; font-size: 1.4rem; }
+.concept-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.analogy {
+  background: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--accent);
+  margin-top: 0.5rem;
+}
+
+/* Pipeline */
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface-elevated);
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  border: 0.5px solid var(--border);
+}
+.pipe-step {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: 40px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.pipe-arrow { color: var(--text-tertiary); font-size: 14px; }
+
+/* Steps grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.step {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 0.5px solid var(--border);
+  transition: transform 0.2s;
+}
+.step:hover { transform: translateY(-2px); }
+.step-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.step h4 { font-size: 1rem; margin-bottom: 0.5rem; font-weight: 600; }
+.step p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+.callout {
+  background: var(--accent-glow);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  border: 0.5px solid rgba(0,113,227,0.2);
+}
+.callout-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(0,113,227,0.1);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* Glossary - full width grid */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+}
+.glossary-item {
+  background: var(--surface);
+  padding: 1.25rem 1.5rem;
+  transition: background 0.2s;
+}
+.glossary-item:hover { background: var(--bg-secondary); }
+.glossary-term {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-family: monospace;
+  letter-spacing: -0.2px;
+}
+.glossary-def {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 0.3rem;
+}
+.glossary-example {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  font-family: monospace;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 0.5px dashed var(--border);
+}
+
+/* Definition strip */
+.def-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+.def-item {
+  flex: 1;
+  min-width: 140px;
+  background: var(--surface);
+  padding: 1.2rem;
+  text-align: left;    /* this fixes it */
+}
+.def-term {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+.def-text {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+  }
+
+/* Category legend */
+.cat-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 1.5rem 0 2rem;
+}
+.legend-dot {
+  font-size: 11px;
+  padding: 5px 14px;
+  border-radius: 40px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c);
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 2rem 0;
+}
+.filter-btn {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 18px;
+  border-radius: 40px;
+  border: 0.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover { background: var(--bg-secondary); color: var(--text); }
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.count-badge {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  padding: 5px 14px;
+  border-radius: 40px;
+  margin-left: 8px;
+}
+
+/* Model table - full width */
+.table-full {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--border);
+  margin-top: 1rem;
+}
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 900px;
+}
+.model-table th {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  background: var(--bg-secondary);
+  border-bottom: 0.5px solid var(--border);
+  position: sticky;
+  top: 56px;
+}
+.model-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 0.5px solid var(--border);
+  vertical-align: middle;
+}
+.model-name { font-weight: 590; color: var(--text); }
+.model-maker { font-size: 12px; color: var(--text-tertiary); }
+.model-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; max-width: 280px; }
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 40px;
+  background: var(--bg-secondary);
+  white-space: nowrap;
+}
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 30px;
+  background: var(--bg-secondary);
+  white-space: nowrap;
+}
+.badge-green { background: rgba(52,199,89,0.12); color: #34c759; }
+.badge-blue { background: rgba(0,113,227,0.12); color: #0071e3; }
+.badge-amber { background: rgba(245,166,35,0.12); color: #f5a623; }
+.badge-red { background: rgba(255,59,48,0.12); color: #ff3b30; }
+.badge-gray { background: rgba(142,142,147,0.12); color: #8e8e93; }
+.no-results { text-align: center; padding: 4rem; color: var(--text-tertiary); }
+
+/* Footer */
+footer {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 0.5px solid var(--border);
+  background: var(--bg-secondary);
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { color: var(--text-secondary); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+
+[id] { scroll-margin-top: 70px; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section, .hero, .concept-card, .step, .glossary-grid, .table-full {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+/* ============================================ */
+/* MOBILE-ONLY FIXES — Desktop remains UNCHANGED */
+/* ============================================ */
+
+/* Mobile card layout for the model table — hidden on desktop */
+.model-cards { display: none; }
+/* Swipe hint hidden on desktop */
+.filter-hint { display: none; }
+
+@media (max-width: 768px) {
+
+  /* --- GLOBAL --- */
+  .container-narrow,
+  .container-wide {
+    padding: 0 1rem;
+    overflow-x: visible; /* allow filter bar to bleed and scroll */
+  }
+
+  /* --- NAV: collapse links, keep brand + toggle --- */
+  nav {
+    padding: 0 1rem;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-size: 13px;
+    margin-right: 0;
+  }
+  /* Hide text nav links on mobile — too many to fit */
+  .nav-link { display: none; }
+  .theme-toggle {
+    width: 44px;
+    height: 26px;
+    margin-left: 0;
+  }
+  .theme-toggle-knob {
+    width: 22px;
+    height: 22px;
+  }
+  .dark .theme-toggle-knob {
+    transform: translateX(18px);
+  }
+
+  /* --- HERO --- */
+  .hero {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    padding: 0.25rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .hero-lead {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .hero-stats {
+    gap: 1.25rem 2rem;
+    padding-top: 1.5rem;
+  }
+  .stat-num { font-size: 1.8rem; }
+  .stat-label { font-size: 10px; }
+
+  /* --- SECTIONS --- */
+  .section { padding: 3rem 0; }
+  .section-header { margin-bottom: 2rem; padding: 0; }
+  .section-header h2 { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .section-header p {
+    white-space: normal;
+    font-size: 0.875rem;
+    overflow: visible;
+  }
+
+  /* --- CONCEPT CARDS --- */
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  .concept-card { padding: 1.25rem; }
+  .concept-card h3 { font-size: 1.15rem; }
+  .concept-card p { font-size: 0.875rem; }
+
+  /* --- PIPELINE: wrap with arrows visible, reads as a flow --- */
+  .pipeline {
+    border-radius: var(--radius-md);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 3px;
+    padding: 1rem;
+    background: var(--surface);
+    overflow: visible;
+  }
+  .pipe-step {
+    width: auto;
+    border-radius: 40px;
+    padding: 0.4rem 0.85rem;
+    font-size: 11px;
+    background: var(--bg-secondary);
+    border-bottom: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+  }
+  .pipe-step::before { content: none; }
+  .pipe-arrow {
+    display: inline;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* --- STEPS GRID --- */
+  .steps-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .step { padding: 1.1rem; }
+
+  /* --- CALLOUT --- */
+  .callout { padding: 1rem 1.1rem; gap: 0.75rem; }
+  .callout p { font-size: 0.85rem; }
+
+  /* --- GLOSSARY --- */
+  .glossary-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  /* --- DEFINITION STRIP --- */
+  .def-strip {
+    flex-direction: column;
+    margin: 1.25rem 0;
+  }
+  .def-item { min-width: 0; }
+
+  /* --- CATEGORY LEGEND --- */
+  .cat-legend { gap: 6px; margin: 1rem 0 1.5rem; }
+  .legend-dot { font-size: 10px; padding: 4px 10px; }
+
+  /* --- FILTER BAR: wrap into rows so all pills visible --- */
+  .filter-bar {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-btn {
+    font-size: 12px;
+    padding: 7px 16px;
+    white-space: nowrap;
+  }
+  .count-badge { white-space: nowrap; }
+  .filter-hint { display: none; }
+
+  /* --- MODEL TABLE: hide the wide table, show cards instead --- */
+  .table-full { display: none; }
+  .model-cards { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+
+  .model-card {
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border);
+    padding: 1rem 1.1rem;
+    box-shadow: var(--card-shadow);
+  }
+  .model-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .model-card-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .model-card-maker {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+  }
+  .model-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    margin-bottom: 0.75rem;
+  }
+  .model-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+  }
+  .model-card-badges .badge {
+    font-size: 10px;
+    padding: 3px 9px;
+  }
+  .model-card-badges .cat-pill {
+    font-size: 10px;
+    padding: 3px 9px;
+  }
+  .model-card-badges .badge-label {
+    font-size: 9px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    padding: 0 2px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Audience pills in hero */
+.hero-audience {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2.5rem;
+}
+.audience-pill {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0.4rem 1.1rem;
+  border-radius: 40px;
+  background: var(--surface);
+  border: 0.5px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+/* Table how-to strip */
+.table-howto {
+  display: flex;
+  align-items: stretch;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--border);
+  margin: 1.5rem 0 2rem;
+  overflow: hidden;
+}
+.howto-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 1rem 1.25rem;
+}
+.howto-divider {
+  width: 0.5px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.howto-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.howto-label--muted {
+  color: var(--text-tertiary);
+}
+.howto-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.howto-sep { display: none; }
+
+/* Start Here grid */
+.start-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+.start-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 0.5px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
+}
+.start-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+.start-icon-line {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+.start-goal {
+  font-size: 1rem;
+  font-weight: 620;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+.start-answer {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.start-answer strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Chapter 05 Takeaway */
+.takeaway-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.takeaway-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.75rem 2rem;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--surface);
+  transition: background 0.2s;
+}
+.takeaway-item:last-child { border-bottom: none; }
+.takeaway-item:hover { background: var(--bg-secondary); }
+.takeaway-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  padding-top: 3px;
+  flex-shrink: 0;
+  width: 24px;
+}
+.takeaway-title {
+  font-size: 1.05rem;
+  font-weight: 620;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.takeaway-body {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile overrides for new elements */
+@media (max-width: 768px) {
+  .audience-pill { font-size: 12px; padding: 0.35rem 0.9rem; }
+  .start-grid { grid-template-columns: 1fr; gap: 0.875rem; }
+  .start-card { padding: 1.25rem; }
+  .table-howto { flex-direction: column; }
+  .howto-divider { width: 100%; height: 0.5px; }
+  .howto-col { padding: 0.85rem 1rem; }
+  .takeaway-item { padding: 1.25rem; gap: 1rem; }
+  .takeaway-title { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#hero">AI Field Guide</a>
+  <a class="nav-link" href="#concepts">Concepts</a>
+  <a class="nav-link" href="#how-it-works">How It Works</a>
+  <a class="nav-link" href="#start-here">Start Here</a>
+  <a class="nav-link" href="#terminology">Glossary</a>
+  <a class="nav-link" href="#model-table">Model Table</a>
+  <a class="nav-link" href="#what-to-use">Takeaway</a>
+  <div class="theme-toggle" id="themeToggle">
+    <div class="theme-toggle-knob"></div>
+  </div>
+</nav>
+
+<main>
+  <div class="hero" id="hero">
+    <div class="hero-eyebrow">The Complete Field Guide · 2025–2026</div>
+    <h1>Understanding the <em>AI Landscape</em></h1>
+    <p class="hero-lead">For anyone stepping into AI for the first time: creators, business owners, students, or just the curious. So many tools, so many names, so much jargon. This guide puts it all in one place, explained in plain English.</p>
+    <div class="hero-audience">
+      <span class="audience-pill">Creatives</span>
+      <span class="audience-pill">Business owners</span>
+      <span class="audience-pill">Students</span>
+      <span class="audience-pill">Curious beginners</span>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-num">6</span><span class="stat-label">Core concepts</span></div>
+      <div><span class="stat-num">20</span><span class="stat-label">Terms decoded</span></div>
+      <div><span class="stat-num">58</span><span class="stat-label">Models covered</span></div>
+      <div><span class="stat-num">9</span><span class="stat-label">Categories</span></div>
+    </div>
+  </div>
+
+  <div class="section" id="concepts">
+    <div class="container-narrow">
+      <div class="section-header">
+        <span class="section-tag">Chapter 01</span>
+        <h2>The Core Concepts - What Is Everything?</h2>
+        <p>Before diving into the model table, you need to understand what all these different things actually are. Here's what each one means, explained in plain English.</p>
+      </div>
+    </div>
+    <div class="container-wide">
+      <div class="card-grid">
+        <div class="concept-card"><div class="card-meta"><div class="card-num">01</div><span class="card-label">Foundation</span></div><h3>LLM - Large Language Model</h3><p>The actual AI brain - a mathematical system with billions of parameters trained on vast amounts of text. It predicts the next word, one at a time, to form coherent responses.</p><div class="analogy"><strong>Analogy:</strong> A brain that has read every book in every library and can write fluently on any topic.</div></div>
+        <div class="concept-card"><div class="card-meta"><div class="card-num">02</div><span class="card-label">Versions</span></div><h3>Model</h3><p>A specific trained and versioned instance of an LLM - "Claude Sonnet 4.6", "GPT-4o", "Llama 3.3 70B". The "70B" means 70 billion parameters.</p><div class="analogy"><strong>Analogy:</strong> If LLM is an engine technology, a specific model is a specific car - same family, different specs.</div></div>
+        <div class="concept-card"><div class="card-meta"><div class="card-num">03</div><span class="card-label">Infrastructure</span></div><h3>Engine / Runtime</h3><p>The software that actually runs a model - loads the file, manages memory, handles requests. The model file itself is inert without an engine.</p><div class="analogy"><strong>Analogy:</strong> The car's drivetrain and electronics. The model is the vehicle body. Both needed to move.</div></div>
+        <div class="concept-card"><div class="card-meta"><div class="card-num">04</div><span class="card-label">Distribution</span></div><h3>Open Source vs Closed</h3><p>Open-source: you can download, self-host, modify for free (Llama, Mistral). Closed: access only via API or chat (GPT-4o, Claude, Gemini).</p><div class="analogy"><strong>Analogy:</strong> Open = full recipe. Closed = order food from their restaurant - kitchen is off-limits.</div></div>
+        <div class="concept-card"><div class="card-meta"><div class="card-num">05</div><span class="card-label">Specialization</span></div><h3>Multimodal & Specialized</h3><p>Multimodal models process text + images/audio/video. Plus coding models, image generation, speech, embedding models for AI-powered search.</p><div class="analogy"><strong>Analogy:</strong> Hiring specialists - general contractor vs electrician vs plumber. Right tool for the job.</div></div>
+        <div class="concept-card"><div class="card-meta"><div class="card-num">06</div><span class="card-label">Access</span></div><h3>API - Application Programming Interface</h3><p>Programmatic way to talk to a model. When developers build apps, they call the API directly - scalable, without a chat interface.</p><div class="analogy"><strong>Analogy:</strong> Chat = walking into a restaurant. API = calling the kitchen directly - faster and programmable.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-alt" id="how-it-works">
+    <div class="container-narrow">
+      <div class="section-header">
+        <span class="section-tag">Chapter 02</span>
+        <h2>How Does an LLM Actually Work?</h2>
+        <p>A plain English walkthrough of exactly what happens between you pressing Send and the AI responding.</p>
+      </div>
+      <div class="pipeline">
+        <span class="pipe-step">Your prompt</span><span class="pipe-arrow">→</span><span class="pipe-step">Tokenization</span><span class="pipe-arrow">→</span><span class="pipe-step">Embedding</span><span class="pipe-arrow">→</span><span class="pipe-step">Transformer layers</span><span class="pipe-arrow">→</span><span class="pipe-step">Token prediction</span><span class="pipe-arrow">→</span><span class="pipe-step">Repeat</span><span class="pipe-arrow">→</span><span class="pipe-step">Response</span>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><span class="step-num">01 · Tokenization</span><h4>Your text gets chopped up</h4><p>Your message is split into tokens (≈3-4 characters each). AI models have token limits - their "context window".</p></div>
+        <div class="step"><span class="step-num">02 · Embedding</span><h4>Words become numbers</h4><p>Each token becomes a vector of numbers encoding meaning. Similar words get mathematically close vectors.</p></div>
+        <div class="step"><span class="step-num">03 · Attention</span><h4>Every word watches every other</h4><p>Through transformer layers, every token "attends" to every other - understanding references and context.</p></div>
+        <div class="step"><span class="step-num">04 · Prediction</span><h4>Pick the next likely word</h4><p>The model produces a probability distribution and samples the next token. Randomness gives variety.</p></div>
+        <div class="step"><span class="step-num">05 · Repeat</span><h4>Do it again, and again</h4><p>Each new token is fed back in. A 200-word response takes 250+ prediction cycles, milliseconds each.</p></div>
+        <div class="step"><span class="step-num">06 · Fine-tuning</span><h4>How it learns to be helpful</h4><p>RLHF (Reinforcement Learning from Human Feedback) trains the model to produce highly-rated responses.</p></div>
+      </div>
+      <div class="callout"><span class="callout-badge">Note</span><p><strong>Parameters, weights, model size</strong> - all refer to the same thing: the billions of numbers inside a model. More parameters = more capability, but also more memory and compute. A 7B model runs on a laptop; 70B needs a gaming PC; 405B needs a server.</p></div>
+      <div class="callout" style="margin-top:1rem;background:var(--bg-secondary);border-color:var(--border);"><span class="callout-badge" style="background:var(--border);color:var(--text-secondary);">So what?</span><p>This is why AI can feel brilliant one moment and confidently wrong the next. It is not thinking. It is pattern-matching at an enormous scale. Understanding that changes how you use it: always verify anything important, and treat it like a very well-read assistant, not an oracle.</p></div>
+    </div>
+  </div>
+
+
+  <!-- START HERE SECTION -->
+  <div class="section" id="start-here">
+    <div class="container-narrow">
+      <div class="section-header">
+        <span class="section-tag">Quick Start</span>
+        <h2>Not sure where to begin?</h2>
+        <p>With 58 models out there it is easy to feel lost. Here is the honest short answer based on what you actually want to do.</p>
+      </div>
+      <div class="start-grid">
+        <div class="start-card">
+          <div class="start-icon-line" style="background:var(--accent)"></div>
+          <div class="start-goal">I just want to chat with AI</div>
+          <div class="start-answer">Start with <strong>Claude</strong> or <strong>ChatGPT</strong>. Both are free to try, no setup needed. Claude tends to be better for writing and nuanced conversations. ChatGPT has a larger ecosystem of plugins.</div>
+        </div>
+        <div class="start-card">
+          <div class="start-icon-line" style="background:#bf5af2"></div>
+          <div class="start-goal">I want to generate images</div>
+          <div class="start-answer">Try <strong>Midjourney</strong> for artistic, high-quality results. <strong>DALL·E 3</strong> (inside ChatGPT) is easier for beginners. <strong>Flux</strong> is free and surprisingly powerful if you are willing to tinker.</div>
+        </div>
+        <div class="start-card">
+          <div class="start-icon-line" style="background:#34c759"></div>
+          <div class="start-goal">I want to use AI for my business</div>
+          <div class="start-answer"><strong>Claude</strong> or <strong>ChatGPT Plus</strong> handle most business tasks: writing, summarising, drafting emails, analysing documents. No coding required. Both have file upload so you can feed them your actual documents.</div>
+        </div>
+        <div class="start-card">
+          <div class="start-icon-line" style="background:#5e5ce0"></div>
+          <div class="start-goal">I want privacy, no data sent online</div>
+          <div class="start-answer">Run a model locally with <strong>Ollama</strong> (free, one command to install) or <strong>LM Studio</strong> (desktop app, no terminal needed). Pair with <strong>Llama 3</strong> or <strong>Gemma 3</strong>, both run well on a normal laptop.</div>
+        </div>
+        <div class="start-card">
+          <div class="start-icon-line" style="background:#64d2ff"></div>
+          <div class="start-goal">I want to make music with AI</div>
+          <div class="start-answer"><strong>Suno</strong> generates full songs from a text prompt: pick a genre, mood, and lyrics. Free tier available. It is genuinely impressive for demos, ideas, and background tracks.</div>
+        </div>
+        <div class="start-card">
+          <div class="start-icon-line" style="background:#f5a623"></div>
+          <div class="start-goal">I want to experiment and learn</div>
+          <div class="start-answer">Start with <strong>Gemini 2.0 Flash</strong>. It has a free API, a generous limit, and supports text, images, and code. It is what most AI automation tutorials use as a starting point.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMINOLOGY SECTION - full width grid -->
+  <div class="section" id="terminology">
+    <div class="container-wide">
+      <div class="section-header">
+        <span class="section-tag">Chapter 03</span>
+        <h2>Terminology Decoder</h2>
+        <p>Every term you'll encounter in the AI world - decoded in plain English with examples.</p>
+      </div>
+      <div class="glossary-grid">
+        <div class="glossary-item"><div class="glossary-term">LLM</div><div class="glossary-def">Large Language Model - the AI brain trained on text.</div><div class="glossary-example">GPT-4, Claude, Llama</div></div>
+        <div class="glossary-item"><div class="glossary-term">Model</div><div class="glossary-def">A specific trained and versioned LLM.</div><div class="glossary-example">Claude Sonnet 4.6, GPT-4o</div></div>
+        <div class="glossary-item"><div class="glossary-term">Parameters / Weights</div><div class="glossary-def">Billions of numbers inside a model - encodes all "knowledge".</div><div class="glossary-example">Llama 3 70B = 70 billion params</div></div>
+        <div class="glossary-item"><div class="glossary-term">Tokens</div><div class="glossary-def">Chunks AI reads/writes (~3-4 characters each).</div><div class="glossary-example">"Hello world" ≈ 3 tokens</div></div>
+        <div class="glossary-item"><div class="glossary-term">Context Window</div><div class="glossary-def">How much text the AI can hold in memory at once.</div><div class="glossary-example">Gemini 1.5 = 1M tokens</div></div>
+        <div class="glossary-item"><div class="glossary-term">Inference</div><div class="glossary-def">Running a model to generate a response.</div><div class="glossary-example">Inference cost = compute cost</div></div>
+        <div class="glossary-item"><div class="glossary-term">Fine-tuning</div><div class="glossary-def">Training further on specific data to specialize.</div><div class="glossary-example">Medical fine-tuned model</div></div>
+        <div class="glossary-item"><div class="glossary-term">RLHF</div><div class="glossary-def">Reinforcement Learning from Human Feedback - trains helpfulness.</div><div class="glossary-example">What makes Claude helpful</div></div>
+        <div class="glossary-item"><div class="glossary-term">RAG</div><div class="glossary-def">Retrieval-Augmented Generation - looks up docs before answering.</div><div class="glossary-example">Chatbot reading your company docs</div></div>
+        <div class="glossary-item"><div class="glossary-term">Embedding</div><div class="glossary-def">Converting text into vectors for search & similarity.</div><div class="glossary-example">nomic-embed-text</div></div>
+        <div class="glossary-item"><div class="glossary-term">Hallucination</div><div class="glossary-def">AI confidently generates false information.</div><div class="glossary-example">Inventing a fake citation</div></div>
+        <div class="glossary-item"><div class="glossary-term">Multimodal</div><div class="glossary-def">Handles text + images/audio/video.</div><div class="glossary-example">GPT-4o, Gemini 1.5 Pro</div></div>
+        <div class="glossary-item"><div class="glossary-term">Open Source / Open Weight</div><div class="glossary-def">Weights are public - download and self-host for free.</div><div class="glossary-example">Llama 3, Mistral, Gemma</div></div>
+        <div class="glossary-item"><div class="glossary-term">Reasoning Model</div><div class="glossary-def">"Thinks step by step" before answering - better at logic/math.</div><div class="glossary-example">o3, DeepSeek R1, QwQ-32B</div></div>
+        <div class="glossary-item"><div class="glossary-term">Agentic AI</div><div class="glossary-def">Can take autonomous actions - browse web, run code, call APIs.</div><div class="glossary-example">Claude Code, Cursor</div></div>
+        <div class="glossary-item"><div class="glossary-term">Engine / Runtime</div><div class="glossary-def">Software that loads and runs a model.</div><div class="glossary-example">llama.cpp, Ollama, vLLM</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-alt" id="model-table">
+    <div class="container-wide">
+      <div class="section-header">
+        <span class="section-tag">Chapter 04</span>
+        <h2>The Full Model Reference Table</h2>
+        <p>Browse 58+ AI models. Green = free/open-source. Blue = free API tier. Amber = freemium. Gray = paid/closed..</p>
+      </div>
+
+      <div class="table-howto">
+        <div class="howto-col">
+          <span class="howto-label">Access</span>
+          <span class="howto-desc">Whether it costs money to use</span>
+        </div>
+        <div class="howto-divider"></div>
+        <div class="howto-col">
+          <span class="howto-label">Open</span>
+          <span class="howto-desc">Download and run it yourself for free</span>
+        </div>
+        <div class="howto-divider"></div>
+        <div class="howto-col">
+          <span class="howto-label">Local</span>
+          <span class="howto-desc">Runs on your own computer, no internet needed</span>
+        </div>
+        <div class="howto-divider"></div>
+        <div class="howto-col">
+          <span class="howto-label howto-label--muted">Snapshot</span>
+          <span class="howto-desc">April 2026. This space moves fast.</span>
+        </div>
+      </div>
+
+      <div class="cat-legend">
+        <span class="legend-dot" style="--c:#0071e3;">Frontier LLM</span>
+        <span class="legend-dot" style="--c:#34c759;">Open-Source LLM</span>
+        <span class="legend-dot" style="--c:#bf5af2;">Multimodal</span>
+        <span class="legend-dot" style="--c:#5e5ce0;">Reasoning</span>
+        <span class="legend-dot" style="--c:#f5a623;">Coding</span>
+        <span class="legend-dot" style="--c:#ff3b30;">Image Gen</span>
+        <span class="legend-dot" style="--c:#64d2ff;">Audio</span>
+        <span class="legend-dot" style="--c:#8e8e93;">Embedding</span>
+        <span class="legend-dot" style="--c:#af52de;">Local Runner</span>
+      </div>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Frontier LLM">Frontier</button>
+        <button class="filter-btn" data-filter="Open-Source LLM">Open Source</button>
+        <button class="filter-btn" data-filter="Multimodal">Multimodal</button>
+        <button class="filter-btn" data-filter="Reasoning">Reasoning</button>
+        <button class="filter-btn" data-filter="Coding">Coding</button>
+        <button class="filter-btn" data-filter="Image Gen">Image Gen</button>
+        <button class="filter-btn" data-filter="Audio/Speech">Audio</button>
+        <button class="filter-btn" data-filter="Embedding">Embedding</button>
+        <button class="filter-btn" data-filter="Local Runner">Local Runner</button>
+        <span class="count-badge" id="countInfo">58 models</span>
+      </div>
+      <div class="filter-hint">← swipe to see more filters</div>
+
+      <div class="table-full">
+        <table class="model-table">
+          <thead>
+            <tr><th>Name</th><th>Maker</th><th>Category</th><th>What it does</th><th>Access</th><th>Open?</th><th>Local?</th></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div class="no-results" id="noResults" style="display:none;">No models match this filter.</div>
+      </div>
+
+      <!-- Mobile card view (shown only on mobile via CSS) -->
+      <div class="model-cards" id="modelCards"></div>
+      <div class="no-results" id="noResultsMobile" style="display:none;">No models match this filter.</div>
+
+    </div>
+  </div>
+</main>
+
+
+  <!-- CHAPTER 05: WHAT TO USE -->
+  <div class="section" id="what-to-use">
+    <div class="container-narrow">
+      <div class="section-header">
+        <span class="section-tag">Chapter 05</span>
+        <h2>The Honest Takeaway</h2>
+        <p>After all of that, here is what actually matters for a normal person getting started with AI.</p>
+      </div>
+      <div class="takeaway-list">
+        <div class="takeaway-item">
+          <span class="takeaway-num">01</span>
+          <div>
+            <div class="takeaway-title">You do not need to understand all of this to use AI</div>
+            <p class="takeaway-body">Most people will get enormous value just from Claude or ChatGPT. You do not need to know what a transformer is. You just need to know how to ask good questions.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-num">02</span>
+          <div>
+            <div class="takeaway-title">The jargon is mostly marketing</div>
+            <p class="takeaway-body">&ldquo;Multimodal&rdquo;, &ldquo;frontier&rdquo;, &ldquo;agentic&rdquo;. Companies use these words to sound impressive. Strip them away and the question is always the same: does it do what I need, at a price I can afford?</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-num">03</span>
+          <div>
+            <div class="takeaway-title">Free options are genuinely good now</div>
+            <p class="takeaway-body">Claude free, ChatGPT free, Gemini free. Any of these would have been considered remarkable just two years ago. Start free. Only pay when you hit real limits.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-num">04</span>
+          <div>
+            <div class="takeaway-title">AI is a tool, not a replacement for thinking</div>
+            <p class="takeaway-body">It hallucinates. It can be confidently wrong. It reflects patterns from its training data, not truth. The best way to use it is as a very fast first draft. Then apply your own judgment.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-num">05</span>
+          <div>
+            <div class="takeaway-title">This space will look different in 12 months</div>
+            <p class="takeaway-body">The models in the table above were not all here a year ago. Some will be replaced, some will merge, new ones will appear. The concepts in Chapters 01–02 will stay true. The tools will keep changing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer>
+  <span>AI FIELD GUIDE · Updated April 2026</span>
+  <div class="footer-links">
+    <a href="#concepts">Concepts</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#start-here">Start Here</a>
+    <a href="#terminology">Glossary</a>
+    <a href="#model-table">Table</a>
+    <a href="#what-to-use">Takeaway</a>
+  </div>
+</footer>
+
+<script>
+const CAT = {"Frontier LLM":"#0071e3","Open-Source LLM":"#34c759","Multimodal":"#bf5af2","Reasoning":"#5e5ce0","Coding":"#f5a623","Image Gen":"#ff3b30","Audio/Speech":"#64d2ff","Embedding":"#8e8e93","Local Runner":"#af52de"};
+const MODELS = [
+  { name:"Claude (Sonnet/Opus/Haiku)", maker:"Anthropic", cat:"Frontier LLM", desc:"General-purpose chat, coding, analysis", access:"Free + Paid API", open:"No", local:"No" },
+  { name:"GPT-4o", maker:"OpenAI", cat:"Frontier LLM", desc:"Flagship multimodal, powers ChatGPT", access:"Free + Paid API", open:"No", local:"No" },
+  { name:"GPT-4.1 / 4o mini", maker:"OpenAI", cat:"Frontier LLM", desc:"Smaller, cheaper high-volume tasks", access:"Paid API", open:"No", local:"No" },
+  { name:"Gemini 2.5 Pro", maker:"Google", cat:"Frontier LLM", desc:"Top model, 1M+ token context", access:"Free + Paid API", open:"No", local:"No" },
+  { name:"Gemini 2.0 Flash / Lite", maker:"Google", cat:"Frontier LLM", desc:"Fast, cheap, free API tier", access:"Free API", open:"No", local:"No" },
+  { name:"Grok 3", maker:"xAI", cat:"Frontier LLM", desc:"Integrated with X/Twitter", access:"Paid", open:"No", local:"No" },
+  { name:"Command R+", maker:"Cohere", cat:"Frontier LLM", desc:"Enterprise, RAG & tool use", access:"Paid API", open:"No", local:"No" },
+  { name:"Llama 3.3 / 3.2", maker:"Meta", cat:"Open-Source LLM", desc:"1B–70B, self-host for free", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Mistral 7B", maker:"Mistral AI", cat:"Open-Source LLM", desc:"Efficient 7B, lightweight", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Mixtral 8x7B", maker:"Mistral AI", cat:"Open-Source LLM", desc:"MoE architecture", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Phi-4 / Phi-3.5", maker:"Microsoft", cat:"Open-Source LLM", desc:"Small but smart, edge deployment", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Qwen 2.5", maker:"Alibaba", cat:"Open-Source LLM", desc:"Multilingual, many sizes", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"DeepSeek V3", maker:"DeepSeek", cat:"Open-Source LLM", desc:"Rivals GPT-4 class", access:"Free download", open:"Yes", local:"Needs big GPU" },
+  { name:"Gemma 3", maker:"Google", cat:"Open-Source LLM", desc:"2B–27B, runs on consumer hardware", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"OLMo 2", maker:"Allen AI", cat:"Open-Source LLM", desc:"Fully open: weights+data+code", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"GPT-4o (Vision)", maker:"OpenAI", cat:"Multimodal", desc:"Images, screenshots, documents", access:"Paid API", open:"No", local:"No" },
+  { name:"Gemini 1.5 Pro (Vision)", maker:"Google", cat:"Multimodal", desc:"Images, video, audio, 1M context", access:"Paid API", open:"No", local:"No" },
+  { name:"LLaVA / BakLLaVA", maker:"Community", cat:"Multimodal", desc:"Open vision-language", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Pixtral", maker:"Mistral AI", cat:"Multimodal", desc:"Mistral vision model", access:"Free/Paid API", open:"Partial", local:"Some" },
+  { name:"Claude 3.5 Vision", maker:"Anthropic", cat:"Multimodal", desc:"UI understanding, documents", access:"Paid API", open:"No", local:"No" },
+  { name:"o3 / o4-mini", maker:"OpenAI", cat:"Reasoning", desc:"Step-by-step thinking", access:"Paid API", open:"No", local:"No" },
+  { name:"DeepSeek R1", maker:"DeepSeek", cat:"Reasoning", desc:"Open reasoning model", access:"Free download", open:"Yes", local:"Needs big GPU" },
+  { name:"QwQ-32B", maker:"Alibaba", cat:"Reasoning", desc:"Math and logic reasoning", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"GitHub Copilot", maker:"Microsoft", cat:"Coding", desc:"AI pair programmer", access:"Paid", open:"No", local:"No" },
+  { name:"Claude Code", maker:"Anthropic", cat:"Coding", desc:"Agentic terminal assistant", access:"Paid", open:"No", local:"No" },
+  { name:"Cursor", maker:"Cursor", cat:"Coding", desc:"AI-native code editor", access:"Free + Paid", open:"No", local:"No" },
+  { name:"Codestral", maker:"Mistral AI", cat:"Coding", desc:"Open code model, 80+ languages", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"DeepSeek Coder V2", maker:"DeepSeek", cat:"Coding", desc:"Competitive open coding", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"DALL·E 3", maker:"OpenAI", cat:"Image Gen", desc:"Text-to-image", access:"Paid API", open:"No", local:"No" },
+  { name:"Midjourney v7", maker:"Midjourney", cat:"Image Gen", desc:"High-quality artistic", access:"Paid", open:"No", local:"No" },
+  { name:"Stable Diffusion 3.5", maker:"Stability", cat:"Image Gen", desc:"Open text-to-image", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Flux (Schnell/Dev/Pro)", maker:"Black Forest", cat:"Image Gen", desc:"Photorealistic", access:"Free + Paid", open:"Partial", local:"Some" },
+  { name:"Whisper", maker:"OpenAI", cat:"Audio/Speech", desc:"Speech-to-text, 100+ languages", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"ElevenLabs TTS", maker:"ElevenLabs", cat:"Audio/Speech", desc:"Realistic TTS, voice cloning", access:"Free + Paid", open:"No", local:"No" },
+  { name:"Suno", maker:"Suno", cat:"Audio/Speech", desc:"AI music generation", access:"Free + Paid", open:"No", local:"No" },
+  { name:"nomic-embed-text", maker:"Nomic AI", cat:"Embedding", desc:"Open embedding, private RAG", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"all-MiniLM-L6-v2", maker:"HuggingFace", cat:"Embedding", desc:"Tiny, CPU-friendly", access:"Free download", open:"Yes", local:"Yes" },
+  { name:"Ollama", maker:"Ollama", cat:"Local Runner", desc:"Run open models with one command", access:"Free", open:"Yes", local:"Yes" },
+  { name:"LM Studio", maker:"LM Studio", cat:"Local Runner", desc:"Desktop app, GUI", access:"Free", open:"No", local:"Yes" },
+  { name:"Jan.ai", maker:"Jan", cat:"Local Runner", desc:"Offline ChatGPT alternative", access:"Free", open:"Yes", local:"Yes" },
+  { name:"llama.cpp", maker:"Community", cat:"Local Runner", desc:"Optimized C++ engine", access:"Free", open:"Yes", local:"Yes" }
+];
+
+function badgeClass(access, type) {
+  if (type === 'access') {
+    if (access.includes("Free download")) return "badge-green";
+    if (access.includes("Free API") || access === "Free") return "badge-blue";
+    if (access.includes("Free + Paid")) return "badge-amber";
+    return "badge-gray";
+  }
+  if (type === 'open') {
+    if (access === "Yes") return "badge-green";
+    if (access === "Partial") return "badge-amber";
+    return "badge-red";
+  }
+  if (type === 'local') {
+    if (access === "Yes") return "badge-green";
+    if (access.includes("Needs") || access === "Some") return "badge-amber";
+    return "badge-gray";
+  }
+}
+
+let currentFilter = "all";
+function render() {
+  const tbody = document.getElementById('tableBody');
+  const noRes = document.getElementById('noResults');
+  const noResMob = document.getElementById('noResultsMobile');
+  const cards = document.getElementById('modelCards');
+  const ci = document.getElementById('countInfo');
+  const rows = currentFilter === "all" ? MODELS : MODELS.filter(m => m.cat === currentFilter);
+
+  tbody.innerHTML = "";
+  cards.innerHTML = "";
+
+  if (!rows.length) {
+    noRes.style.display = "block";
+    noResMob.style.display = "block";
+    ci.textContent = "0 results";
+    return;
+  }
+  noRes.style.display = "none";
+  noResMob.style.display = "none";
+  ci.textContent = currentFilter === "all" ? `${rows.length} models` : `${rows.length} / ${MODELS.length}`;
+
+  rows.forEach(m => {
+    // Desktop table row
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="model-name">${m.name}</td>
+      <td class="model-maker">${m.maker}</td>
+      <td><span class="cat-pill" style="background:${CAT[m.cat]}18;color:${CAT[m.cat]}"><span class="cat-dot" style="background:${CAT[m.cat]};"></span>${m.cat}</span></td>
+      <td class="model-desc">${m.desc}</td>
+      <td><span class="badge ${badgeClass(m.access, 'access')}">${m.access}</span></td>
+      <td><span class="badge ${badgeClass(m.open, 'open')}">${m.open}</span></td>
+      <td><span class="badge ${badgeClass(m.local, 'local')}">${m.local}</span></td>
+    `;
+    tbody.appendChild(tr);
+
+    // Mobile card
+    const card = document.createElement('div');
+    card.className = 'model-card';
+    card.innerHTML = `
+      <div class="model-card-header">
+        <div>
+          <div class="model-card-name">${m.name}</div>
+          <div class="model-card-maker">${m.maker}</div>
+        </div>
+        <span class="cat-pill" style="background:${CAT[m.cat]}18;color:${CAT[m.cat]};flex-shrink:0;">
+          <span class="cat-dot" style="background:${CAT[m.cat]};width:6px;height:6px;border-radius:50%;display:inline-block;"></span>${m.cat}
+        </span>
+      </div>
+      <div class="model-card-desc">${m.desc}</div>
+      <div class="model-card-badges">
+        <span class="badge ${badgeClass(m.access, 'access')}">${m.access}</span>
+        <span class="badge-label">Open:</span>
+        <span class="badge ${badgeClass(m.open, 'open')}">${m.open}</span>
+        <span class="badge-label">Local:</span>
+        <span class="badge ${badgeClass(m.local, 'local')}">${m.local}</span>
+      </div>
+    `;
+    cards.appendChild(card);
+  });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+// Dark mode - Apple toggle
+function initDarkMode() {
+  const isDark = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  if (isDark) document.documentElement.classList.add('dark');
+
+  const toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    }
+  });
+}
+
+render();
+initDarkMode();
+
+// Fade out the swipe hint once the user scrolls the filter bar
+const filterBar = document.getElementById('filterBar');
+const filterHint = document.querySelector('.filter-hint');
+if (filterBar && filterHint) {
+  filterBar.addEventListener('scroll', function onScroll() {
+    filterHint.style.opacity = '0';
+    filterHint.style.pointerEvents = 'none';
+    filterBar.removeEventListener('scroll', onScroll);
+  }, { passive: true });
+}
+
+// Active nav on scroll
+const sections = ['hero', 'concepts', 'how-it-works', 'start-here', 'terminology', 'model-table', 'what-to-use'];
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-56px 0px -50% 0px' });
+sections.forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el); });
+</script>
+</body>
+</html>
